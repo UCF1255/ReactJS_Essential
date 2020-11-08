@@ -1,17 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import reportWebVitals from "./reportWebVitals";
+import Library from './Library'
+
+// -----------------------Process to build app---------------------------
+// npm run build
+// npm install serve -g
+// serve -s build
+// you will get local host & n/w path for serving application
+
+let bookList = [
+  { title: "The Sun Rises", author: "Neha", pages: 200 },
+  { title: "The A TEAM", author: "Bhavana", pages: 10 },
+  { title: "TEAM book", author: "Rashmi", pages: 300 },
+];
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+ <Library books={bookList}/>, //removed books={bookList} fro showing default props
+  document.getElementById("root")
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
